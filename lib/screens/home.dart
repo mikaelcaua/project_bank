@@ -11,7 +11,9 @@ class Home extends StatelessWidget {
       body: Column(
         children: [
           Header(),
-          BoxCard(boxContent: Text('testando'))
+          BoxCard(
+            boxContent: Text('ADASDAS'),
+          ),
         ],
       ),
     );
