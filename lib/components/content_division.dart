@@ -6,10 +6,11 @@ class ContentDivision extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.fromLTRB(0, 8, 0, 8),
       decoration: BoxDecoration(
         border: Border.all(
           color: Colors.grey,
-          strokeAlign: 1,
+          width: 1,
           style: BorderStyle.solid
         )
       ),

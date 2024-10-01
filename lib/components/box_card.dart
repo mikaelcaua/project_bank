@@ -1,22 +1,26 @@
 import 'package:flutter/material.dart';
 
 class BoxCard extends StatelessWidget {
-  const BoxCard({super.key, required this.boxContent});
+  const BoxCard({super.key, required this.boxContent, this.text, this.width, });
   final Widget boxContent;
+  final String? text;
+  final double? width;
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Container(
-        padding: EdgeInsets.all(16),
-        decoration: BoxDecoration(
-          color: Theme.of(context).cardColor,
-          boxShadow: kElevationToShadow[3],
-          borderRadius: BorderRadius.all(Radius.circular(8))
-        ),
-        
-        child: boxContent,
+    return Container(
+      width: width,
+      padding: const EdgeInsets.all(8),
+      decoration: BoxDecoration(
+        color: Theme.of(context).cardColor,
+        borderRadius: const BorderRadius.all(Radius.circular(8)),
+      ),
+      child: Column(
+        children: [
+          boxContent,
+          if (text != null && text!.isNotEmpty)
+            Text(text!), // Renderiza apenas se houver texto válido
+        ],
       ),
     );
   }
